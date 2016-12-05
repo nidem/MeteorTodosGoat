@@ -2,12 +2,16 @@ Template.AddList.events
 	'submit form': (event) ->
 		event.preventDefault()
 		listName = $('[name=listName]').val()
-		Meteor.call 'createNewList', listName, (error, result)->
+
+		listId = Lists.insert
+			name: listName
+			createdBy: Meteor.userId()
+		, (error) ->
 			if error
-				console.log error.reason
+				bootbox.alert error
 			else
-				Router.go 'listPage', id: result
 				$('[name=listName]').val ''
+				Router.go 'listPage', id: listId
 
 Template.AddList.helpers {}
 

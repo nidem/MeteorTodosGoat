@@ -56,8 +56,16 @@ Router.route '/lists',
 Router.route '/list/:id',
 	template: 'ListPage'
 	name: 'listPage'
+	where: 'client'
 	data: ->
 		Lists.findOne _id: @params.id
 	waitOn: ->
 		Meteor.subscribe 'list', @params.id
 		Meteor.subscribe 'todos', @params.id
+
+Router.route '/admin/users',
+	template: 'AccessDenied',
+	name: 'adminUsers'
+	where: 'client'
+	waitOn: ->
+		Meteor.subscribe 'adminUsers'

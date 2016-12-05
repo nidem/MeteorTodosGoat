@@ -16,7 +16,7 @@ Meteor.publish 'list', (listId)->
 		Lists.find()
 	else
 		Lists.find
-			createdBy: @userId
+			#createdBy: @userId
 			_id: listId
 
 Meteor.publish 'todos', (listId)->
@@ -29,3 +29,6 @@ Meteor.publish 'todos', (listId)->
 		Todos.find
 			createdBy: @userId
 			listId: listId
+
+Meteor.publish 'adminUsers', ->
+	Meteor.users.find()
