@@ -1,0 +1,40 @@
+template(name='Nav')
+	#nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+		.container-fluid
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href="{{ pathFor 'home' }}") Todos Goat
+
+			.collapse.navbar-collapse
+				if currentUser
+					ul.nav.navbar-nav
+						li
+							a(href="{{ pathFor 'lists' }}") My Lists
+					ul.nav.navbar-nav.navbar-right
+						li.dropdown
+							a.dropdown-toggle(data-toggle='dropdown' role='button') Settings
+								span.caret
+							ul.dropdown-menu
+								each navSettings
+									+NavSetting
+								li.nuke-databse
+									a(href='#') Nuke database
+						if isInRole 'admin'
+							li
+								p.navbar-text.badge.disabled(href='#') Admin Permissions
+						li
+						li
+							a.logout(href='#') Logout {{ currentUser.username }}
+				else
+					ul.nav.navbar-nav
+						li
+							a(href="{{ pathFor 'login' }}") Login
+					ul.nav.navbar-nav
+						li
+							a(href="{{ pathFor 'register' }}") Register
+
+

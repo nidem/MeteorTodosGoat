@@ -1,0 +1,7 @@
+template(name='TodoItem')
+	li.list-group-item.todo-item(class="{{ ternary completed 'checked' '' }}")
+		.form-inline
+			input.form-control.input-lg(type="checkbox" checked="{{ completed }}")
+			input.form-control.input-sm(type="text" value="{{ name }}" name="todoItem" disabled="{{ completed }}")
+			a(href="#")
+				.delete-todo.glyphicon.glyphicon-remove-circle

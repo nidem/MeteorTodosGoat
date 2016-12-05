@@ -1,0 +1,17 @@
+template(name='Login')
+	.login
+		h3.text-center.login-title Login
+		.well.muted-text.text-center Default credentials of admin / admin have already been created
+		form.form-horizontal
+			.form-group
+				.col-md-offset-4.col-md-4
+					input.form-control(name='username' type='text' placeholder='Username')
+
+			.form-group
+				.col-md-offset-4.col-md-4
+					input.form-control(name='password' type='password' placeholder='Password')
+
+			input#login.btn.btn-info.col-md-offset-5.col-md-2(type='submit' value='Login')
+
+
+

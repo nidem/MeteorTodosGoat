@@ -1,0 +1,66 @@
+/*****************************************************************************/
+/* Nav: Style */
+/*****************************************************************************/
+
+@import "../../stylesheets/vendor/custom.bootstrap.import.less";
+
+#nav {
+
+	z-index: 9999;
+
+	&.impersonating {
+		background-color: @brand-danger;
+	}
+
+	.glyphicon {
+		//color: lighten(@alert-success-text, 20%)
+		color: lighten(@state-success-bg, 20%)
+	}
+
+	.disabled {
+		.glyphicon {
+			//color: darken(desaturate(@alert-danger-text, 30%), 10%)
+			color: desaturate(@state-danger-bg, 40%)
+		}
+
+		a {
+			color: darken(@text-color, 15%);
+		}
+
+		.badge {
+			background: @gray;
+			color: darken(@text-color, 15%);
+		}
+	}
+
+	.navbar-brand img {
+		max-height: 100%;
+	}
+
+	.header-image,
+	.avatar img {
+		width: auto;
+		height: @navbar-height * 0.45;
+	}
+
+	.highlight {
+		-webkit-animation: highlightLevel 4s; // ease 0 1; /* Safari 4+ */
+		-moz-animation:    highlightLevel 4s; // ease 0 1; /* Fx 5+ */
+		-o-animation:      highlightLevel 4s; // ease 0 1; /* Opera 12+ */
+		animation:         highlightLevel 4s; // ease 0 1; /* IE 10+, Fx 29+ */
+	}
+
+	@keyframes highlightLevel {
+		0%  {text-shadow: 0 0 0 #000;}
+		16%  {text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900;}
+		32%  {text-shadow: 0 0 0 #fff, 0 0 5px #FF9900;}
+		48%  {text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900;}
+		64%  {text-shadow: 0 0 0 #fff, 0 0 5px #FF9900;}
+		80%  {text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900;}
+		100%  {text-shadow: 0 0 0 #000;}
+	}
+}
+
+body {
+	padding-top:@navbar-height * 1.5;
+}

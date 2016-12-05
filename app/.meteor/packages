@@ -1,0 +1,39 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+
+
+accounts-base
+accounts-password
+alanning:roles
+aldeed:simple-schema
+aslagle:reactive-table
+blaze-html-templates
+check
+coffeescript
+dburles:collection-helpers
+ecmascript
+es5-shim
+iron:router
+jquery
+less
+meteor-base
+mizzao:bootboxjs
+mizzao:jquery-ui
+mobile-experience
+momentjs:moment
+mongo
+mquandalle:jade
+nemo64:bootstrap@=3.3.5_2
+ostrio:iron-router-title
+session
+standard-minifier-css
+standard-minifier-js
+themeteorchef:commonmark
+tracker
+tsega:bootstrap3-datetimepicker
+themeteorchef:jquery-validation
+aldeed:collection2

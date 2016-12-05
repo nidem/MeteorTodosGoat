@@ -1,0 +1,27 @@
+/*****************************************************************************/
+/* Login: Style */
+/*****************************************************************************/
+@import "../../stylesheets/vendor/custom.bootstrap.import.less";
+
+.login {
+}
+
+label.error {
+	display: inline-block;
+	color: @brand-danger;
+	font-weight: normal;
+	font-size: smaller;
+	padding-left: 16px;
+	vertical-align: middle;
+
+	background: url('/images/error.png');
+	background-repeat: no-repeat;
+	background-position-y: center;
+}
+
+label.error.success {
+	color: @brand-info;
+	background: url('/images/success.png');
+	background-repeat: no-repeat;
+	background-position-y: center;
+}

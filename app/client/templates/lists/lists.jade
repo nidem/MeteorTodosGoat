@@ -1,0 +1,7 @@
+template(name='Lists')
+	.lists
+		h2 Lists
+		+AddList
+		.list-group.col-xs-4
+			each list
+				a.list-group-item(href="{{pathFor 'listPage' id=_id }}") {{ name }}

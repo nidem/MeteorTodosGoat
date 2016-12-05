@@ -1,0 +1,10 @@
+template(name='Todos')
+	.todos.container
+		.row
+			+AddTodo
+		.row
+			ul.list-group.col-xs-4
+				each todo
+					+TodoItem
+		.row
+			+TodosCount
