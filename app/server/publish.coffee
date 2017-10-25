@@ -20,7 +20,7 @@ Meteor.publish 'list', (listId)->
 			_id: listId
 
 Meteor.publish 'todos', (listId)->
-	if Settings.findOne(key: 'overPublication').valueBoolean
+	if Settings.findOne(key: 'overPublication').value
 		check listId, String
 
 	if Meteor.settings.public.overPublication
@@ -31,4 +31,10 @@ Meteor.publish 'todos', (listId)->
 			listId: listId
 
 Meteor.publish 'adminUsers', ->
-	Meteor.users.find()
+	unless Settings.findOne(key: 'overPublication').value or Roles.userIsInRole @userId, 'admin'
+		return @ready()
+
+	Meteor.users.find {},
+		fields:
+			username: true
+			roles: true
